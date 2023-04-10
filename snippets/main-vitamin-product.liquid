@@ -1,0 +1,56 @@
+<!-- Object -->
+{% assign product_title = product.title %}
+{% assign product_link = product.url %}
+{% assign product_image = product.featured_image | img_url: '270x', scale: 2 %}
+{% assign product_price = product.selected_or_first_available_variant.price | money %}
+{% assign price_per_day = product.selected_or_first_available_variant.price  | divided_by: 30 |  round: 2 | money %}
+<!-- Metafields -->
+{% assign hover_color = product.metafields.products.hover_color %}
+{% assign purpose_array = product.metafields.products.product_purpose.value %}
+
+<!-- Variable hover-color could be used for product metafield type color -->
+<swiper-slide class="main-product" id="product1" style="--hover-color: {{ hover_color }}">
+    <a href="{{ product_link }}" class="main-product__link">
+        <div class="main-product__media-wrapper">
+            {% if price_per_day != blank %}
+                <div class="main-product__subscription-price">
+                    <span class="price">{{ price_per_day }}</span>
+                    <span class="period">/day</span>
+                </div>
+            {% endif %}
+            {% if product_image != blank %}
+                <div class="main-product__image-wrapper">
+                    <picture>
+                        <img class="main-product__image" src="{{ product_image }}" alt="Product 1" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+            {% endif %}
+            <div class="main-product__purpose-wrapper">
+                {% if purpose_array != blank %}
+                    {% for purpose in purpose_array %}
+                        {% assign svg_icon = purpose.svg_icon %}
+                        {% assign purpose_title = purpose.purpose_title %}
+                        <div class="main-product__purpose-item">
+                            {% if svg_icon != blank %}
+                                <span class="icon">{{ purpose.svg_icon }}</span>
+                            {% endif %}
+                            {% if purpose_title != blank %}
+                                <span class="text">{{ purpose.purpose_title }}</span>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% if product_title != blank and product_price != blank %}
+            <div class="main-product__content-wrapper">
+                {% if product_title != blank %}
+                    <div class="main-product__product-title">{{ product_title }}</div>
+                {% endif %}
+                {% if product_price != blank %}
+                    <div class="main-product__product-price">{{ product_price }}</div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </a>
+</swiper-slide>

@@ -1,0 +1,22 @@
+.main-testimonials {
+    position: relative;
+    padding: 60px 0 95px;
+
+    @media screen and (min-width: 1400px) {
+        padding: 186px 0 205px;
+    }
+
+    .main-testimonials__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: 1400px) {
+            width: fit-content;
+
+            & > .main-testimonial:first-child {
+                margin-left: 60px;
+            }
+        }
+    }
+}

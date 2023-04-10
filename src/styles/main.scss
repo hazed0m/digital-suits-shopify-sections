@@ -1,0 +1,12 @@
+//Global
+@import './global/normalize';
+@import './global/variables';
+@import './global/global';
+
+//Sections
+@import './sections/main-products';
+@import './sections/main-testimonials';
+
+//Snippets
+@import './snippets/main-product-card';
+@import './snippets/main-testimonial-card';

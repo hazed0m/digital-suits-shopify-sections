@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "main-vitamins": {
+      "type": "main-vitamins",
+      "settings": {
+        "section_title": "Have you had your daily dose of vit today?",
+        "section_description": "<p>Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health.<\/p>",
+        "section_button_text": "See All Products",
+        "section_button_url": "shopify:\/\/collections\/all"
+      }
+    },
+    "240df86c-2d44-4b35-a6a3-088187514708": {
+      "type": "main-testimonials",
+      "blocks": {
+        "778a8e4e-3901-4330-a6ae-55bf7697262c": {
+          "type": "Testimonial",
+          "settings": {
+            "testimonial_photo": "shopify:\/\/shop_images\/testimonial_1.png",
+            "testimonial_title": "Walking on Sunshine",
+            "testimonial_rating": 5,
+            "testimonial_text": "<p>“These little softgels have helped boost my mood and keep me in a positive head space during all the chaos of everyone coming back to work since covid. I suffer from anxiety and depression and this has helped”<\/p>",
+            "testimonial_author": "Amber",
+            "testimonial_product": "immunity"
+          }
+        },
+        "57138730-1ead-453e-bce7-b2b931f83773": {
+          "type": "Testimonial",
+          "settings": {
+            "testimonial_photo": "shopify:\/\/shop_images\/testimonial_2.png",
+            "testimonial_title": "Complete one Eighty in the Mood Department",
+            "testimonial_rating": 4,
+            "testimonial_text": "<p>“I’ve been one to get frustrated easily while dealing with stressful situations, either while working or with people. But I got annoyed with feeling this way, so I decided to look online and see what  I could find. Came across these and ...”<\/p>",
+            "testimonial_author": "Aicia",
+            "testimonial_product": "cloud-nine"
+          }
+        },
+        "e904b5ac-0678-43e0-8ba3-94ad01524493": {
+          "type": "Testimonial",
+          "settings": {
+            "testimonial_photo": "shopify:\/\/shop_images\/testimonial_3.png",
+            "testimonial_title": "Love this!!!",
+            "testimonial_rating": 3,
+            "testimonial_text": "<p>“I love this vitamin, it is so tiny but packs a major punch! This has helped massively with my anxiety and has helped boost me up a little too!”<\/p>",
+            "testimonial_author": "Amber",
+            "testimonial_product": "heart-minds"
+          }
+        }
+      },
+      "block_order": [
+        "778a8e4e-3901-4330-a6ae-55bf7697262c",
+        "57138730-1ead-453e-bce7-b2b931f83773",
+        "e904b5ac-0678-43e0-8ba3-94ad01524493"
+      ],
+      "settings": {
+        "section_title": "Why People Love Us"
+      }
+    }
+  },
+  "order": [
+    "main-vitamins",
+    "240df86c-2d44-4b35-a6a3-088187514708"
+  ]
+}
