@@ -2,8 +2,8 @@
 {% assign testimonial_blocks = section.blocks %}
 {% assign block_size = testimonial_blocks | size %}
 
-<section class="section" id="main-testimonials">
-    <div class="main-testimonials">
+<div class="main-testimonials container" id="main-testimonials">
+    <div class="main-testimonials__wrapper">
         {% if section_title != blank %}
             <h2 class="main-testimonials__title title">{{ section_title }}</h2>
         {% endif %}
@@ -18,7 +18,7 @@
         <div class="swiper-navigation-prev">{% render 'icon-swiper-green-prev' %}</div>
         <div class="swiper-navigation-next">{% render 'icon-swiper-green-next' %}</div>
     </div>
-</section>
+</div>
 
 {% schema %}
 {

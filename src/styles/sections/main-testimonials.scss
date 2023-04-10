@@ -1,9 +1,11 @@
 .main-testimonials {
-    position: relative;
-    padding: 60px 0 95px;
+    .main-testimonials__wrapper {
+        position: relative;
+        padding: 60px 0 95px;
 
-    @media screen and (min-width: 1400px) {
-        padding: 186px 0 205px;
+        @media screen and (min-width: 1400px) {
+            padding: 186px 0 205px;
+        }
     }
 
     .main-testimonials__list {

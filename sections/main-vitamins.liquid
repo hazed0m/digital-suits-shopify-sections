@@ -3,8 +3,8 @@
 {% assign section_button_text = section.settings.section_button_text %}
 {% assign section_button_url = section.settings.section_button_url %}
 
-<section id="main-products">
-    <div class="main-products">
+<div class="main-products container" id="main-products">
+    <div class="main-products__wrapper">
         {% if section_title != blank %}
             <h2 class="main-products__title title">{{ section_title }}</h2>
         {% endif %}
@@ -23,7 +23,7 @@
             <span>{{ section_button_text }}</span>
         </a>
     {% endif  %}
-</section>
+</div>
 {% schema %}
     {
         "name": "t:sections.main-vitamins.name",

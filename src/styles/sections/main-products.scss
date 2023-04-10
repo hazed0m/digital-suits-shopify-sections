@@ -1,4 +1,4 @@
-#main-products {
+.main-products {
     position: relative;
     @media screen and (min-width: 1200px) {
         &:after {
@@ -11,15 +11,15 @@
             right: -65%;
         }
     }
-}
-.main-products {
-    position: relative;
-    padding: 25px 0 0;
 
-    @media screen and (min-width: 1200px) {
-        padding: 32px 0 0;
+    .main-product__wrapper {
+        position: relative;
+        padding: 25px 0 0;
+
+        @media screen and (min-width: 1200px) {
+            padding: 32px 0 0;
+        }
     }
-
     .main-products__title {
         padding-top: 25px;
         margin: 0 auto;
