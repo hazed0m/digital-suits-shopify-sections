@@ -2,23 +2,21 @@
 {% assign testimonial_blocks = section.blocks %}
 {% assign block_size = testimonial_blocks | size %}
 
-<section class="section" id="main-testimonials">
-    <div class="main-testimonials">
-        {% if section_title != blank %}
-            <h2 class="main-testimonials__title title">{{ section_title }}</h2>
-        {% endif %}
-        {% if block_size > 0 %}
-            <swiper-container class="main-testimonials__list" testimonials-list init="false">
-                {% for testimonial_block in testimonial_blocks %}
-                    {% render 'main-testimonial-item', block: testimonial_block.settings %}
-                {% endfor %}
-            </swiper-container>
-        {% endif %}
-        <div class="swiper-pagination"></div>
-        <div class="swiper-navigation-prev">{% render 'icon-swiper-green-prev' %}</div>
-        <div class="swiper-navigation-next">{% render 'icon-swiper-green-next' %}</div>
-    </div>
-</section>
+<div class="main-testimonials">
+    {% if section_title != blank %}
+        <h2 class="main-testimonials__title title">{{ section_title }}</h2>
+    {% endif %}
+    {% if block_size > 0 %}
+        <swiper-container class="main-testimonials__list" testimonials-list init="false">
+            {% for testimonial_block in testimonial_blocks %}
+                {% render 'main-testimonial-item', block: testimonial_block.settings %}
+            {% endfor %}
+        </swiper-container>
+    {% endif %}
+    <div class="swiper-pagination"></div>
+    <div class="swiper-navigation-prev">{% render 'icon-swiper-green-prev' %}</div>
+    <div class="swiper-navigation-next">{% render 'icon-swiper-green-next' %}</div>
+</div>
 
 {% schema %}
 {
