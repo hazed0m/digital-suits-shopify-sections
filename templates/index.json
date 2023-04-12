@@ -5,6 +5,7 @@
       "settings": {
         "section_title": "Have you had your daily dose of vit today?",
         "section_description": "<p>Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health.<\/p>",
+        "section_collection": "frontpage",
         "section_button_text": "See All Products",
         "section_button_url": "shopify:\/\/collections\/all"
       }
