@@ -25,7 +25,7 @@ const productsParams = {
             slidesPerView: 3,
             spaceBetween: 15
         },
-        1400: {
+        1200: {
             slidesPerView: 4,
             spaceBetween: 7 // decreased from 26px as per design, because grid is not fitting well with next section
         }

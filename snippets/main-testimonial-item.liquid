@@ -9,13 +9,13 @@
 {% assign testimonial_product_link = testimonial_product.url %}
 
 <swiper-slide class="main-testimonial">
-    {% if testimonial_photo != blank %}
-        <div class="main-testimonial__image-wrapper">
+    <div class="main-testimonial__image-wrapper">
+        {% unless testimonial_photo contains 'assets/no-image' %}
             <picture>
                 <img class="main-testimonial__image" src="{{ testimonial_photo }}" alt="{{ testimonial_author }}" loading="lazy" decoding="async">
             </picture>
-        </div>
-    {% endif %}
+        {% endunless %}
+    </div>
     <div class="main-testimonial__top-wrapper">
         {% if testimonial_stars_count != blank %}
             <div class="main-testimonial__rating-wrapper">
@@ -27,28 +27,28 @@
         <div class="main-testimonial__title">{{ testimonial_title }}</div>
         <div class="main-testimonial__text">{{ testimonial_text }}</div>
     </div>
-    {% if testimonial_product != blank %}
-        <div class="main-testimonial__bottom-wrapper">
-            {% if testimonial_author != blank %}
-                <div class="main-testimonial__author">{{ testimonial_author }}</div>
-            {% endif %}
-            {% if testimonial_product_link != blank %}
-                <a href="{{ testimonial_product_link }}" class="main-testimonial__link">
-                    <div class="main-testimonial__product">
-                        {% if testimonial_product_image != blank %}
-                            <div class="main-testimonial__product-image-wrapper">
-                                <picture>
-                                    <img class="main-testimonial__product-image" src="{{ testimonial_product_image }}" alt="{{ testimonial_product_title }}" loading="lazy" decoding="async">
-                                </picture>
-                            </div>
-                        {% endif %}
-                        {% if testimonial_product_title != blank %}
-                            <div class="main-testimonial__product-title">{{ testimonial_product_title }}</div>
-                            <div class="main-testimonial__product-link">{% render 'icon-product-link' %}</div>
-                        {% endif %}
-                    </div>
-                </a>
-            {% endif %}
-        </div>
-    {% endif %}
+    <div class="main-testimonial__bottom-wrapper">
+        {% if testimonial_author != blank %}
+            <div class="main-testimonial__author">{{ testimonial_author }}</div>
+        {% endif %}
+        {% if testimonial_product_link != blank %}
+            <a href="{{ testimonial_product_link }}" class="main-testimonial__link">
+                <div class="main-testimonial__product">
+                    {% if testimonial_product_image != blank %}
+                        <div class="main-testimonial__product-image-wrapper">
+                            <picture>
+                                <img class="main-testimonial__product-image" src="{{ testimonial_product_image }}" alt="{{ testimonial_product_title }}" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                    {% endif %}
+                    {% if testimonial_product_title != blank %}
+                        <div class="main-testimonial__product-title">{{ testimonial_product_title }}</div>
+                        <div class="main-testimonial__product-link">{% render 'icon-product-link' %}</div>
+                    {% endif %}
+                </div>
+            </a>
+        {% else %}
+            <div class="main-testimonial__empty"></div>
+        {% endif %}
+    </div>
 </swiper-slide>

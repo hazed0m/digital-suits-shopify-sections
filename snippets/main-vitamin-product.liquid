@@ -1,14 +1,12 @@
-<!-- Object -->
 {% assign product_title = product.title %}
 {% assign product_link = product.url %}
 {% assign product_image = product.featured_image | img_url: '270x', scale: 2 %}
 {% assign product_price = product.selected_or_first_available_variant.price | money %}
 {% assign price_per_day = product.selected_or_first_available_variant.price  | divided_by: 30 |  round: 2 | money %}
-<!-- Metafields -->
+
 {% assign hover_color = product.metafields.products.hover_color %}
 {% assign purpose_array = product.metafields.products.product_purpose.value %}
 
-<!-- Variable hover-color could be used for product metafield type color -->
 <swiper-slide class="main-product" id="product1" style="--hover-color: {{ hover_color }}">
     <a href="{{ product_link }}" class="main-product__link">
         <div class="main-product__media-wrapper">
@@ -42,7 +40,7 @@
                 {% endif %}
             </div>
         </div>
-        {% if product_title != blank and product_price != blank %}
+        {% if product_title != blank or product_price != blank %}
             <div class="main-product__content-wrapper">
                 {% if product_title != blank %}
                     <div class="main-product__product-title">{{ product_title }}</div>

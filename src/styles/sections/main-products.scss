@@ -56,10 +56,7 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-top: -40px;
-
-            & > .main-product:first-child {
-                margin-left: 7px; // decreased from 26px as per design, because grid is not fitting well with next section
-            }
+            max-width: 1240px;
         }
     }
 }

@@ -711,6 +711,9 @@
         "description": {
           "label": "Description"
         },
+        "section_collection": {
+          "label": "Section collection"
+        },
         "section_button_text": {
           "label": "Section button text"
         },

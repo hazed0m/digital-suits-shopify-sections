@@ -2,24 +2,30 @@
 {% assign testimonial_blocks = section.blocks %}
 {% assign block_size = testimonial_blocks | size %}
 
-<div class="main-testimonials container" id="main-testimonials">
-    <div class="main-testimonials__wrapper">
-        {% if section_title != blank %}
-            <h2 class="main-testimonials__title title">{{ section_title }}</h2>
-        {% endif %}
-        {% if block_size > 0 %}
-            <swiper-container class="main-testimonials__list" testimonials-list init="false">
-                {% for testimonial_block in testimonial_blocks %}
-                    {% render 'main-testimonial-item', block: testimonial_block.settings %}
-                {% endfor %}
-            </swiper-container>
-        {% endif %}
-        <div class="swiper-pagination"></div>
-        <div class="swiper-navigation-prev">{% render 'icon-swiper-green-prev' %}</div>
-        <div class="swiper-navigation-next">{% render 'icon-swiper-green-next' %}</div>
-    </div>
-</div>
-
+{% if section_title != blank or block_size > 0 %}
+  <div class="main-testimonials container" id="main-testimonials">
+      <div class="main-testimonials__wrapper">
+          {% if section_title != blank %}
+              <h2 class="main-testimonials__title title">{{ section_title }}</h2>
+          {% endif %}
+          {% if block_size > 0 %}
+              <swiper-container class="main-testimonials__list" testimonials-list init="false">
+                  {% for testimonial_block in testimonial_blocks %}
+                      {% assign testimonial_block_settings = testimonial_block.settings %}
+                      {% assign testimonial_title = testimonial_block_settings.testimonial_title %}
+                      {% assign testimonial_product_title = testimonial_block_settings.testimonial_product.title %}
+                      {% if testimonial_title != blank or testimonial_product_title != blank %}
+                        {% render 'main-testimonial-item', block: testimonial_block.settings %}
+                      {% endif %}
+                  {% endfor %}
+              </swiper-container>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-navigation-prev">{% render 'icon-swiper-green-prev' %}</div>
+            <div class="swiper-navigation-next">{% render 'icon-swiper-green-next' %}</div>
+          {% endif %}
+      </div>
+  </div>
+{% endif %}
 {% schema %}
 {
   "name": "t:sections.main-testimonials.name",
@@ -53,8 +59,11 @@
           "label": "t:sections.main-testimonials.settings.title.label"
         },
         {
-          "type": "number",
+          "type": "range",
           "id": "testimonial_rating",
+          "min": 1,
+          "max": 5,
+          "default": 5,
           "label": "t:sections.main-testimonials.settings.rating.label"
         },
         {
